@@ -11,13 +11,13 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ItemPedidoTeste {
+public class ItemProdutoTeste {
 
     Produto produto = new Produto("Camisa rosa", 20.0, 300);
     double quantidadeAdquiridaEsperada = 200;
     ItemPedido itemPedido = new ItemPedido(produto, quantidadeAdquiridaEsperada);
 
-    public ItemPedidoTeste() {
+    public ItemProdutoTeste() {
     }
 
     @BeforeClass
