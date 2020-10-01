@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProdutoTeste {
-    
+   Produto produto = new Produto("Camisa rosa", 20.00, 300); 
     public ProdutoTeste() {
     }
     
@@ -33,7 +33,6 @@ public class ProdutoTeste {
     
     @org.junit.jupiter.api.Test
     public void CT001(){
-        Produto produto = new Produto("Camisa rosa", 20.00, 300);
         String nomeEsperado = "Camisa rosa";
         double valorEsperado = 20.00;
         double quantidadeEsperada = 300;
@@ -44,13 +43,8 @@ public class ProdutoTeste {
     
     @org.junit.jupiter.api.Test
     public void CT002(){
-        Produto produto = new Produto("Camisa rosa", 20.00, 300);
-        String nomeEsperado = "Camisa rosa";
-        double valorEsperado = 20.00;
-        double quantidadeEsperada = 300;
-        assertEquals(nomeEsperado, produto.getNome());
-        assertEquals(valorEsperado, produto.getValorUnitario());
-        assertEquals(quantidadeEsperada, produto.getQuantidade());
+        double estoqueEsperado = 300;
+        assertEquals(estoqueEsperado, produto.estoqueDisponivel(299));
     }
 
 
