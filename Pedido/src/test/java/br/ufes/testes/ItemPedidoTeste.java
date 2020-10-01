@@ -1,8 +1,8 @@
 package br.ufes.testes;
 
-
 import br.ufes.model.ItemPedido;
 import br.ufes.model.Produto;
+import java.text.DecimalFormat;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -12,34 +12,48 @@ import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ItemPedidoTeste {
-    Produto produto = new Produto("Camisa rosa", 20.00, 300); 
-    double quantidadeEsperada = 200; 
-    ItemPedido itemPedido = new ItemPedido(produto,quantidadeEsperada);
+
+    Produto produto = new Produto("Camisa rosa", 20.0, 300);
+    double quantidadeAdquiridaEsperada = 200;
+    ItemPedido itemPedido = new ItemPedido(produto, quantidadeAdquiridaEsperada);
+
     public ItemPedidoTeste() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
-    
+
     @Test
-    public void CT005(){
-        double valorItemEsperado = 20.00;
-        double valorEsperado = valorItemEsperado * quantidadeEsperada;
-        assertEquals(valorEsperado,itemPedido.getValorItem());
-}
-       
-  
+    public void CT005() {
+        double valorItemEsperado = 20.0;
+        double valorEsperado = valorItemEsperado * quantidadeAdquiridaEsperada;
+        assertEquals(valorEsperado, itemPedido.getValorItem());
+    }
+
+    @Test
+    public void CT006() {
+
+        double valorItemEsperado = 20.0;
+        double valorEsperado = valorItemEsperado * quantidadeAdquiridaEsperada;
+        DecimalFormat df = new DecimalFormat("0.00");
+        String toStringEsperado = produto.getNome()
+                + ", valor Unitario: R$ " + produto.getValorUnitario()
+                + ", quantidade no pedido:" + quantidadeAdquiridaEsperada
+                + ", valor Total: R$ " + df.format(valorEsperado);
+        assertEquals(toStringEsperado, itemPedido.toString());
+
+    }
 }
