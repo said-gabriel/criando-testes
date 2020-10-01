@@ -1,6 +1,6 @@
 package br.ufes.testes;
 
-import br.ufes.model.Cliente;
+
 import br.ufes.model.Produto;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -37,6 +37,7 @@ public class ProdutoTeste {
         double valorEsperado = 20.00;
         double quantidadeEsperada = 300;
         double valorUltimaCompraEsperado = 20.00;
+        produto.setValorUnitario(valorEsperado); 
         assertEquals(nomeEsperado, produto.getNome());
         assertEquals(valorEsperado, produto.getValorUnitario());
         assertEquals(quantidadeEsperada, produto.getQuantidade());
@@ -55,6 +56,7 @@ public class ProdutoTeste {
         double valorEsperado = 20.00;
         double quantidadeEsperada = 300;
         double valorUltimaCompraEsperado = 20.00;
+        produto.setValorUnitario(valorEsperado);
         String toStringEsperado = "Produto: " + nomeEsperado
                 + ", valor unitario: R$" + valorEsperado
                 + ", valor da ultima compra: R$" + valorUltimaCompraEsperado
