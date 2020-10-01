@@ -36,9 +36,11 @@ public class ProdutoTeste {
         String nomeEsperado = "Camisa rosa";
         double valorEsperado = 20.00;
         double quantidadeEsperada = 300;
+        double valorUltimaCompraEsperado = 20.00;
         assertEquals(nomeEsperado, produto.getNome());
         assertEquals(valorEsperado, produto.getValorUnitario());
         assertEquals(quantidadeEsperada, produto.getQuantidade());
+        assertEquals(valorUltimaCompraEsperado, produto.getValorUltimaCompra());
     }
     
     @Test
@@ -46,6 +48,18 @@ public class ProdutoTeste {
         boolean estoqueEsperado = true;
         assertEquals(estoqueEsperado, produto.estoqueDisponivel(299));
     }
-
+    
+    @Test
+    public void CT004(){
+        String nomeEsperado = "Camisa rosa";
+        double valorEsperado = 20.00;
+        double quantidadeEsperada = 300;
+        double valorUltimaCompraEsperado = 20.00;
+        String toStringEsperado = "Produto: " + nomeEsperado
+                + ", valor unitario: R$" + valorEsperado
+                + ", valor da ultima compra: R$" + valorUltimaCompraEsperado
+                + ", quantidade em estoque: " + quantidadeEsperada;
+        assertEquals(toStringEsperado, produto.toString());
+    }
 
 }
