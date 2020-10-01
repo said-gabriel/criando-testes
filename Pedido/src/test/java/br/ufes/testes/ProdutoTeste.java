@@ -31,8 +31,8 @@ public class ProdutoTeste {
     public void tearDown() {
     }
     
-    @org.junit.jupiter.api.Test
-    public void CT001(){
+    @Test
+    public void CT002(){
         String nomeEsperado = "Camisa rosa";
         double valorEsperado = 20.00;
         double quantidadeEsperada = 300;
@@ -41,9 +41,9 @@ public class ProdutoTeste {
         assertEquals(quantidadeEsperada, produto.getQuantidade());
     }
     
-    @org.junit.jupiter.api.Test
-    public void CT002(){
-        double estoqueEsperado = 300;
+    @Test
+    public void CT003(){
+        boolean estoqueEsperado = true;
         assertEquals(estoqueEsperado, produto.estoqueDisponivel(299));
     }
 
