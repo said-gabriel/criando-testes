@@ -50,5 +50,17 @@ public class PedidoTeste {
         assertEquals(pedido.getItens(),produto1);
         
     }
+    
+    @Test
+    public void CT008() {
+        double valor1 = 150;
+        double valor2 = 450;
+        double valortotal = valor1+valor2;
+        pedido.addItem(produto1,valor1);
+        pedido.addItem(produto2, valor2);
+        assertEquals(valortotal,pedido.getValorAPagar());
+        
+        
+    }
 
 }
