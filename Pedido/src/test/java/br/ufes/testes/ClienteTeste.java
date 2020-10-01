@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class ClienteTeste {
-    
+   Cliente cliente = new Cliente("Fulano","951.075.557-12"); 
     public ClienteTeste() {
     }
 
@@ -32,7 +32,6 @@ public class ClienteTeste {
     
     @Test
     public void CT001(){
-        Cliente cliente = new Cliente("Fulano","951.075.557-12");
         String nomeEsperado = "Fulano";
         String CPFouCNPJEsperado = "951.075.557-12";
         assertEquals(nomeEsperado, cliente.getNome());
